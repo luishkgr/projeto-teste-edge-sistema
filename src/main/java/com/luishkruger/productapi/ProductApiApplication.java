@@ -1,4 +1,4 @@
-package com.luishkruger.product_api;
+package com.luishkruger.productapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
