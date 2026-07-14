@@ -4,6 +4,7 @@ import com.luishkruger.productapi.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 import com.luishkruger.productapi.model.Produto;
 
+import java.util.List;
 
 @Service
 public class ProdutoService {
@@ -16,5 +17,9 @@ public class ProdutoService {
 	
 	public Produto salvar(Produto produto) {
 		return produtoRepository.save(produto);
+	}
+	
+	public List<Produto> listarTodos(){
+		return produtoRepository.findAll();
 	}
 }
