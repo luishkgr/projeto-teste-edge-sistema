@@ -43,7 +43,7 @@ src/main/java
 ### Clone o repositório
 
 ```bash
-git clone https://github.com/luishkgr/product_api.git
+git clone https://github.com/luishkgr/projeto-teste-edge-sistema.git
 ```
 
 ### Entre na pasta do projeto
