@@ -46,32 +46,12 @@ src/main/java
 git clone https://github.com/luishkgr/projeto-teste-edge-sistema.git
 ```
 
-### Entre na pasta do projeto
-
-```bash
-cd product_api
-```
-
 ### Execute a aplicação
 
 Pelo Eclipse:
 
 - Clique com o botão direito em `ProductApiApplication`
 - **Run As → Java Application**
-
-Ou utilizando Maven:
-
-```bash
-mvn spring-boot:run
-```
-
-A aplicação estará disponível em:
-
-```
-http://localhost:8080
-```
-
----
 
 ## 🗄 Banco de dados H2
 
