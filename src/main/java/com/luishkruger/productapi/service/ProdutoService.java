@@ -27,4 +27,16 @@ public class ProdutoService {
 	public Optional<Produto> buscarPorCodigo(Integer codigo){
 		return produtoRepository.findById(codigo);
 	}
+	
+	public Optional<Produto> atualizar(Integer codigo, Produto produto){
+		
+		if (produtoRepository.existsById(codigo)) {
+			
+			produto.setCodigo(codigo);
+			
+			return Optional.of(produtoRepository.save(produto));
+			
+		}
+		return Optional.empty();
+	}
 }
