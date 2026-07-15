@@ -1,5 +1,7 @@
 package com.luishkruger.productapi.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -10,14 +12,14 @@ public class Produto {
 	
 	private String nome;
 	
-	private Double preco;
+	private BigDecimal preco;
 
 	private String marca;
 	
 	public Produto() {
 	}
 	
-	public Produto(Integer codigo, String nome, Double preco, String marca) {
+	public Produto(Integer codigo, String nome, BigDecimal preco, String marca) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.preco = preco;
@@ -40,11 +42,11 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public Double getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
-	public void setPreco(Double preco) {
+	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
 

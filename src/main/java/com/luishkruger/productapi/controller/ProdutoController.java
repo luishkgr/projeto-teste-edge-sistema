@@ -26,11 +26,16 @@ public class ProdutoController {
 	}
 	
 	@PostMapping("/produtos")
-	public ResponseEntity<Produto> cadastrar(@RequestBody Produto produto){
-		
-			Produto produtoSalvo = produtoService.salvar(produto);
-			
-			return ResponseEntity.status(HttpStatus.CREATED).body(produtoSalvo);
+	public ResponseEntity<Produto> cadastrar(@RequestBody Produto produto) {
+
+	    Optional<Produto> produtoSalvo = produtoService.salvar(produto);
+
+	    if (produtoSalvo.isPresent()) {
+	        return ResponseEntity.status(HttpStatus.CREATED)
+	                .body(produtoSalvo.get());
+	    }
+
+	    return ResponseEntity.badRequest().build();
 	}
 	@GetMapping("/produtos")
 	public List<Produto> listarTodos(){

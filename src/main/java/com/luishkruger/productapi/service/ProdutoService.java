@@ -16,8 +16,13 @@ public class ProdutoService {
 		this.produtoRepository = produtoRepository;
 	}
 	
-	public Produto salvar(Produto produto) {
-		return produtoRepository.save(produto);
+	public Optional<Produto> salvar(Produto produto) {
+
+	    if (produtoRepository.existsById(produto.getCodigo())) {
+	        return Optional.empty();
+	    }
+
+	    return Optional.of(produtoRepository.save(produto));
 	}
 	
 	public List<Produto> listarTodos(){
@@ -30,14 +35,13 @@ public class ProdutoService {
 	
 	public Optional<Produto> atualizar(Integer codigo, Produto produto){
 		
-		if (produtoRepository.existsById(codigo)) {
-			
-			produto.setCodigo(codigo);
-			
-			return Optional.of(produtoRepository.save(produto));
-			
+		if (!produtoRepository.existsById(codigo)) {
+			return Optional.empty();
 		}
-		return Optional.empty();
+			
+		produto.setCodigo(codigo);
+			
+		return Optional.of(produtoRepository.save(produto));
 	}
 	
 	public boolean deletar(Integer codigo) {
