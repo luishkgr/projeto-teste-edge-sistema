@@ -39,4 +39,15 @@ public class ProdutoService {
 		}
 		return Optional.empty();
 	}
+	
+	public boolean deletar(Integer codigo) {
+
+	    if (!produtoRepository.existsById(codigo)) {
+	        return false;
+	    }
+
+	    produtoRepository.deleteById(codigo);
+
+	    return true;
+	}
 }
