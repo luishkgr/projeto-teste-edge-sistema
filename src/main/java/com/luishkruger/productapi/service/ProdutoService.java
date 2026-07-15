@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.luishkruger.productapi.model.Produto;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProdutoService {
@@ -21,5 +22,9 @@ public class ProdutoService {
 	
 	public List<Produto> listarTodos(){
 		return produtoRepository.findAll();
+	}
+	
+	public Optional<Produto> buscarPorCodigo(Integer codigo){
+		return produtoRepository.findById(codigo);
 	}
 }
